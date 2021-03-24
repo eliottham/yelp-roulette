@@ -25,10 +25,12 @@ const Location = ({ value, handleChange }) => {
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         handleChange(`${pos.coords.latitude}, ${pos.coords.longitude}`);
+        setError(false);
         setLoading(false);
       },
       (err) => {
-        console.error(err);
+        window.alert(`Could not get location: ${err.message}`);
+        setError(true);
         setLoading(false);
       },
       {

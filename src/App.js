@@ -22,6 +22,16 @@ const yelpREST = axios.create({
 const BUSINESS_SEARCH_ENDPOINT = 'businesses/search';
 
 const categories = {
+  active: {
+    value: 'active',
+    label: 'Activity',
+    subcategories: [
+      {
+        value: 'all',
+        label: 'All',
+      },
+    ],
+  },
   food: {
     value: 'food',
     label: 'Food',
